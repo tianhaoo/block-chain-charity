@@ -53,12 +53,12 @@
 
           </ul>
         </div><!--/.nav-collapse -->
-      </div>
-    </nav>
+    </div>
+</nav>
 <!---banner--->
 			<div class="banner wow fadeInDownBig animated animated" data-wow-delay="0.4s">
 				<div class="container">
-					<h2>Short Codes</h2>
+					<h2>Ranks</h2>
 				</div>
 			</div>
 
@@ -73,8 +73,8 @@
 <!--插入rank-->
 
 <div>
-<table class="table table-bordered" border="80">
-		<thead class="col-md-9">
+<table class="table-bordered" align="center">
+		<thead>
 			<tr>
 				<th>name</th>
 				<th>age</th>
@@ -82,16 +82,15 @@
 				<th>country</th>
 			</tr>
 		</thead>
-		<tbody class="col-md-9">
+		<tbody>
 			<tr>
-				<td>{{ $donators->name}}</td>
-				<td><span class="badge">{{ $donators->age }}</span></td>									
+				<td>{{ $donators->name }}</td>
+				<td>{{ $donators->age }}</td>									
 				<td>{{ $donators->money }}</td>
-				<td><span class="badge">{{ $donators->country }}</span></td>
+				<td>{{ $donators->country }}</td>
 			</tr>
 		</tbody>
 	</table>     
-
 </div>
 
 

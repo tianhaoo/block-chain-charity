@@ -388,10 +388,23 @@ def gen_birthday(westenstyle=False):
     if not westenstyle:
         return str("%02d%02d" % (month, day))
     return str("%02d%02d" % (day, month))
+import time
+a1=(2000,1,1,0,0,0,0,0,0)              #设置开始日期时间元组（1976-01-01 00：00：00）
+a2=(2012,12,31,23,59,59,0,0,0)    #设置结束日期时间元组（1990-12-31 23：59：59）
+
+start=time.mktime(a1)    #生成开始时间戳
+end=time.mktime(a2)      #生成结束时间戳
+
 
 if __name__ == '__main__':
     print (gen_two_words(split=' ', lowercase=False))
-    with open('country.txt', 'w+') as f:
-    	for i in range(100):
-    		f.write(str(ALL_COUNTRIES[random.randint(0,len(ALL_COUNTRIES)-1)]))
-    		f.write('\n')
+    with open('time.txt', 'w+') as f:
+        lis = []
+        for i in range(100):
+            t=random.randint(start,end)
+            date_touple=time.localtime(t)
+            date=time.strftime("%Y-%m-%d",date_touple) 
+            lis.append(date)
+        sorted(lis)
+        for j in range(100):
+            f.write(lis[j]+'\n')
